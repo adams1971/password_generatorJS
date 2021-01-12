@@ -5,6 +5,12 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyx";
 var numbers = "0123456789";
 var specialChar = "!@#$%^&*()?/;:~";
 
+//added userSelection & finalPassword var
+var userSelection = [];
+
+var finalPassword = [];
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
