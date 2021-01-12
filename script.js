@@ -10,8 +10,24 @@ var userSelection = [];
 
 var finalPassword = [];
 
+//added functions, prompt, console.log
+function generatePassword() {
+  
+  var passLength = prompt("Please insert a number between 8 to 128");
+  //remmeber to add a condition where IF  the user choose less than 8 or greater than 128 to stop and alert them to follow intsruction. Then ask initial question again 
+  console.log("password lenght = " + passLength);
 
-// Write password to the #password input
+
+
+
+
+
+
+
+
+  
+
+  // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
