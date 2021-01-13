@@ -19,18 +19,28 @@ function generatePassword() {
   
   
   //added upperCase/lowerCase confirm var
-  var upperC = confirm("Would you like uppercase letters");
+  var upperC = confirm("Would you like Uppercase Letters");
   if(upperC) {
     userSelection.push(upperCase);
   } 
   
-  var lowerC = confirm("would you like lowercase letters");
+  var lowerC = confirm("Would you like Lowercase Letters");
   if(lowerC) {
     userSelection.push(lowerCase);
   }
+//added remaining specChar and numb var
+var specC = confirm("Would you like and Special Characters");
+if(specC) {
+  userSelection.push(specialChar);
+}
+
+var numb = confirm("Would you like to add Numbers to your password?"); 
+if(numb) { 
+  userSelection.push(numbers);
+}
 
 
-
+  console.log("user selection = "+userSelection);
 
 
 
