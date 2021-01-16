@@ -1,5 +1,5 @@
-// Assignment Code
-// added var functions
+//Assignment Code
+//added var & functions
 //added variables
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyx";
@@ -10,13 +10,14 @@ var specialChar = "!@#$%^&*()?/;:~";
 var userSelection =[]; 
 
 var finalPassword = [];
+  //console.log("finalPassword =" + finalPassword);
 
-//added functions, prompt, console.log
+//added functions, prompt, console.log (1 removed perams passlength)
 function generatePassword() { 
 
   
   var passLength = prompt("Please insert a number between 8 to 128");
-  //remmeber to add a condition where IF  the user choose less than 8 or greater than 128 to stop and alert them to follow intsruction. Then ask initial question again 
+  //rememeber to add a condition where IF  the user choose less than 8 or greater than 128 to stop and alert them to follow intsruction. Then ask initial question again 
   if (passLength <8 ) {
     alert ("Please insert a number between 8 to 128");
     return;
@@ -47,40 +48,37 @@ function generatePassword() {
     userSelection.push(numbers);
   }
   console.log("user selection = " + userSelection);
+  //console.log("final Password = " + finalPassword);
 
-  //added if statement) NEED definition of what this is doing
-  if (userSelection.length ===0);
-  return;
-
-  // for loop with random index to create random char 
-  for (var i = 0; i < userSelection; i++) {
-    var randomIndex = Math.floor(Math.random() * userSelection.length);
-    var random = userSelection.charAt(randomIndex);
+  //not sure if this statement is needed-- if (upperC != true && lowerC != true && specC != true && )
+  
+  for (var i = 0; i < passLength; i++) {
+    finalPassword.push(userSelection[Math.floor(Math.random() * userSelection.length)]);
+      console.log(finalPassword.join('+')); 
+    var randomIndex = Math.floor(Math.random() * passLength);
+    var random = passLength.charAt(randomIndex);
+    console.log(random); 
   }
 
+    document.getElementById('password').value = finalPassword.join('');
+    alert('Your new Password is: ' + finalPassword.join(""));
+  
   //var math.floor will pick a random index for userSelection array set to var
   //math.floor to pick random char  --name as var use this to concat
 }
 
-  
+    //document.getElementById('password').value = finalPassword.join('');
+    // alert('Your new Password is: ' + finalPassword.join("");
+    // Write password to the #password input
+    //function writePassword() {
+  //var password = generatePassword();
+  //var passwordText = document.querySelector("#password");
+  // console.log(writePassword);
 
+  //passwordText.value = password;
 
-  // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
+//}
 
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
-generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-//create for loop to choose password characters for(var i = 0; i <=passwordLength; i++)
+generateBtn.addEventListener("click", generatePassword);
